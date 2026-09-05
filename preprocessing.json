@@ -1,0 +1,16 @@
+{
+  "model_family": "CatBoostRegressor",
+  "categorical_strategy": "Native CatBoost string categories; missing values use __MISSING__.",
+  "missing_category_token": "__MISSING__",
+  "numeric_strategy": "Training-split median imputation",
+  "numeric_fill_values": {
+    "vehicle_age": 6.0,
+    "km_driven": 50000.0,
+    "mileage": 19.64,
+    "engine": 1248.0,
+    "max_power": 88.5,
+    "seats": 5.0
+  },
+  "fitted_on": "10,670 fixed training rows only",
+  "scaling": "None"
+}

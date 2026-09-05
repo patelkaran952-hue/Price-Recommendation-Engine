@@ -1,0 +1,131 @@
+{
+  "contract_version": "1.0.0",
+  "feature_order": [
+    "brand",
+    "model",
+    "vehicle_age",
+    "km_driven",
+    "seller_type",
+    "fuel_type",
+    "transmission_type",
+    "mileage",
+    "engine",
+    "max_power",
+    "seats"
+  ],
+  "feature_count": 11,
+  "categorical_features": [
+    "brand",
+    "model",
+    "seller_type",
+    "fuel_type",
+    "transmission_type"
+  ],
+  "numeric_feature_order": [
+    "vehicle_age",
+    "km_driven",
+    "mileage",
+    "engine",
+    "max_power",
+    "seats"
+  ],
+  "numeric_features": {
+    "vehicle_age": {
+      "dtype": "number",
+      "required_column": true,
+      "missing_value_allowed_and_imputed": true,
+      "unit": "years",
+      "description": "Vehicle age at listing",
+      "validation_minimum": 0.0,
+      "minimum_inclusive": true,
+      "training_observed_minimum": 0.0,
+      "training_common_lower": 1.0,
+      "training_median": 6.0,
+      "training_common_upper": 14.0,
+      "training_observed_maximum": 29.0,
+      "range_policy": "Reject physically invalid values; warn outside training ranges. Training ranges are not universal vehicle limits."
+    },
+    "km_driven": {
+      "dtype": "number",
+      "required_column": true,
+      "missing_value_allowed_and_imputed": true,
+      "unit": "km",
+      "description": "Odometer distance",
+      "validation_minimum": 0.0,
+      "minimum_inclusive": true,
+      "training_observed_minimum": 100.0,
+      "training_common_lower": 4000.0,
+      "training_median": 50000.0,
+      "training_common_upper": 180000.0,
+      "training_observed_maximum": 3800000.0,
+      "range_policy": "Reject physically invalid values; warn outside training ranges. Training ranges are not universal vehicle limits."
+    },
+    "mileage": {
+      "dtype": "number",
+      "required_column": true,
+      "missing_value_allowed_and_imputed": true,
+      "unit": "km/l or km/kg",
+      "description": "Reported fuel efficiency",
+      "validation_minimum": 0.0,
+      "minimum_inclusive": true,
+      "training_observed_minimum": 4.0,
+      "training_common_lower": 10.978299999999999,
+      "training_median": 19.64,
+      "training_common_upper": 28.4,
+      "training_observed_maximum": 33.54,
+      "range_policy": "Reject physically invalid values; warn outside training ranges. Training ranges are not universal vehicle limits."
+    },
+    "engine": {
+      "dtype": "number",
+      "required_column": true,
+      "missing_value_allowed_and_imputed": true,
+      "unit": "cc",
+      "description": "Engine displacement",
+      "validation_minimum": 0.0,
+      "minimum_inclusive": false,
+      "training_observed_minimum": 793.0,
+      "training_common_lower": 796.0,
+      "training_median": 1248.0,
+      "training_common_upper": 2993.0,
+      "training_observed_maximum": 6592.0,
+      "range_policy": "Reject physically invalid values; warn outside training ranges. Training ranges are not universal vehicle limits."
+    },
+    "max_power": {
+      "dtype": "number",
+      "required_column": true,
+      "missing_value_allowed_and_imputed": true,
+      "unit": "bhp",
+      "description": "Maximum power",
+      "validation_minimum": 0.0,
+      "minimum_inclusive": false,
+      "training_observed_minimum": 38.4,
+      "training_common_lower": 46.3,
+      "training_median": 88.5,
+      "training_common_upper": 258.0,
+      "training_observed_maximum": 626.0,
+      "range_policy": "Reject physically invalid values; warn outside training ranges. Training ranges are not universal vehicle limits."
+    },
+    "seats": {
+      "dtype": "number",
+      "required_column": true,
+      "missing_value_allowed_and_imputed": true,
+      "unit": "count",
+      "description": "Seat count",
+      "validation_minimum": 0.0,
+      "minimum_inclusive": false,
+      "training_observed_minimum": 2.0,
+      "training_common_lower": 5.0,
+      "training_median": 5.0,
+      "training_common_upper": 8.0,
+      "training_observed_maximum": 9.0,
+      "range_policy": "Reject physically invalid values; warn outside training ranges. Training ranges are not universal vehicle limits."
+    }
+  },
+  "exact_feature_match_required": true,
+  "target": {
+    "name": "selling_price",
+    "unit": "INR",
+    "training_transform": "log1p",
+    "prediction_inverse": "maximum(expm1(log_prediction), 0)"
+  }
+}

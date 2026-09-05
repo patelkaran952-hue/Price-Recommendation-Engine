@@ -1,0 +1,76 @@
+{
+  "contract_version": "1.0.0",
+  "model_version": "1.0.0",
+  "model_name": "Used Car Price Recommender",
+  "final_model_selected": true,
+  "entry_point": "src.predict.PriceRecommendationEngine",
+  "created_at_utc": "2026-09-01T19:03:17.989535+00:00",
+  "files": {
+    "model": {
+      "path": "catboost_price_recommender_v1.cbm",
+      "sha256": "3b08c06c643129fb0995d7e9ccf4609d8303adf14722e488f54a2fd7ed938b1f",
+      "role": "Frozen CatBoost native model"
+    },
+    "feature_schema": {
+      "path": "feature_schema.json",
+      "sha256": "2366c3db79658fd490be8208d29c70d2c0285dc2bac0cbabca26798f5b04e284",
+      "role": "Ordered input contract"
+    },
+    "allowed_inputs": {
+      "path": "allowed_inputs.json",
+      "sha256": "2a0629aa7f7bd1ba911b5cb4236a148369a39919a7c3c5717e03f35176372f60",
+      "role": "Training-only allowed values"
+    },
+    "preprocessing": {
+      "path": "preprocessing.json",
+      "sha256": "4111f0bf7334d00e39243b499808da0b3a38c921f51efeec53f2b733387a017b",
+      "role": "Stored preprocessing values"
+    },
+    "interval_calibration": {
+      "path": "interval_calibration.json",
+      "sha256": "1bd9141f792293f929f24912f90bbb57d3081c6da1ec5dfcfacb0f3e7c996678",
+      "role": "Price-range calibration"
+    },
+    "confidence_profile": {
+      "path": "confidence_profile.json",
+      "sha256": "315be34458bc5af28e9986c034d3d671b45fc3c2686828d949e531c87320dec2",
+      "role": "Support and confidence rules"
+    },
+    "final_test_metrics": {
+      "path": "final_test_metrics.json",
+      "sha256": "1111987b078b54e4d47ff14f0b63ea045664709d17f801aa7b5feb2fe387b0ee",
+      "role": "One-time final-test metrics"
+    },
+    "model_metadata": {
+      "path": "model_metadata.json",
+      "sha256": "3b885df216dee793f3f82e4206be920baf26be88b8942c6ef51cdb43164ab702",
+      "role": "Version and training metadata"
+    },
+    "model_card": {
+      "path": "MODEL_CARD.md",
+      "sha256": "989de811f80c0499df64e28f1b52bf0816d906f202f67221362804c00104e793",
+      "role": "Intended use and limitations"
+    },
+    "fresh_process_verification": {
+      "path": "fresh_process_verification.json",
+      "sha256": "25523564c57561a741c7502ca04c5c1ea954421b2d0e0215576564bb897433d6",
+      "role": "Fresh-process load and parity result"
+    }
+  },
+  "runtime_files": {
+    "src/__init__.py": {
+      "sha256": "b4a09bf798fc20c884f1a305985a978ee1f34518c7fb5866cea1971418da0e36"
+    },
+    "src/config.py": {
+      "sha256": "8dbe740bccb373e91dfd6ca034a1f1b4ebcc7ce6137ab570d5e2be178301e70b"
+    },
+    "src/predict.py": {
+      "sha256": "43f7676eb6911059ec548943ffbd4524d76d9a02af336c722aa7939e6f5c59c6"
+    }
+  },
+  "minimum_inference_dependencies": [
+    "catboost==1.2.10",
+    "numpy==2.3.5",
+    "pandas==2.2.3"
+  ]
+}

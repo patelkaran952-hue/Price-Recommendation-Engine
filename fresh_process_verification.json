@@ -1,0 +1,33 @@
+{
+  "verified_at_utc": "2026-09-01T19:03:17.988988+00:00",
+  "python_executable": "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python",
+  "fresh_process_exit_code": 0,
+  "sample": {
+    "brand": "Maruti",
+    "model": "Alto",
+    "vehicle_age": 9,
+    "km_driven": 120000,
+    "seller_type": "Individual",
+    "fuel_type": "Petrol",
+    "transmission_type": "Manual",
+    "mileage": 19.7,
+    "engine": 796,
+    "max_power": 46.3,
+    "seats": 5.0
+  },
+  "current_process": {
+    "recommended_price": 157939.58255982507,
+    "range_lower": 125209.74259167897,
+    "range_upper": 199224.93783095002,
+    "confidence": "Low"
+  },
+  "fresh_process": {
+    "recommended_price": 157939.58255982507,
+    "range_lower": 125209.74259167897,
+    "range_upper": 199224.93783095002,
+    "confidence": "Low",
+    "model_version": "1.0.0"
+  },
+  "maximum_numeric_difference": 0.0,
+  "passed": true
+}

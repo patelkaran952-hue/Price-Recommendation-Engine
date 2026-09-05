@@ -1,0 +1,32 @@
+{
+  "artifact": "models/dummy_median_baseline.joblib",
+  "artifact_sha256": "adf7d33559fd5b5f6be33d38a18e1da3b66a7b7967fcd85348a5159edd52dc9d",
+  "estimator": "DummyRegressor",
+  "strategy": "median",
+  "scikit_learn_version": "1.8.0",
+  "joblib_version": "1.5.3",
+  "random_seed": 42,
+  "training_rows": 10670,
+  "feature_columns": [
+    "brand",
+    "model",
+    "vehicle_age",
+    "km_driven",
+    "seller_type",
+    "fuel_type",
+    "transmission_type",
+    "mileage",
+    "engine",
+    "max_power",
+    "seats"
+  ],
+  "prediction_inr": 560000.0,
+  "validation_metrics": {
+    "mae_inr": 396881.07,
+    "rmse_inr": 834402.15,
+    "r2": -0.065699,
+    "median_absolute_error_inr": 210000.0,
+    "rmsle": 0.694584
+  },
+  "test_set_evaluated": false
+}

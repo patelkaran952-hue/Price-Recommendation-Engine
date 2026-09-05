@@ -1,0 +1,25 @@
+{
+  "method": "Absolute log-residual calibration by predicted-price band",
+  "nominal_coverage": 0.8,
+  "band_boundaries_inr": [
+    500000,
+    1000000,
+    2000000
+  ],
+  "band_labels": [
+    "Up to ₹5 lakh",
+    "₹5–10 lakh",
+    "₹10–20 lakh",
+    "Above ₹20 lakh"
+  ],
+  "band_log_quantiles": {
+    "Up to ₹5 lakh": 0.23222064411781673,
+    "₹5–10 lakh": 0.16207551254430008,
+    "₹10–20 lakh": 0.2145497693866556,
+    "Above ₹20 lakh": 0.197838201663199
+  },
+  "minimum_band_calibration_rows": 50,
+  "calibration_source": "1,143 rows from the fixed Phase 9 validation calibration subset",
+  "evaluation_source": "1,144 separate Phase 9 validation interval-evaluation rows",
+  "guarantee_warning": "Empirical 80% target coverage is not a guarantee for an individual car."
+}

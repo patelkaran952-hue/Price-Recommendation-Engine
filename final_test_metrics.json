@@ -1,0 +1,43 @@
+{
+  "evaluation_id": "phase10-final-test-once",
+  "completed_at_utc": "2026-09-01T18:57:58.660792+00:00",
+  "frozen_model_sha256": "3b08c06c643129fb0995d7e9ccf4609d8303adf14722e488f54a2fd7ed938b1f",
+  "test_split_sha256": "601f9ab1ec8eb30c8d30fe1c1efa6f78d6cc88df85721f716dc9963cfb1739f7",
+  "test_rows": 2287,
+  "catboost_metrics": {
+    "mae_inr": 97825.86159605058,
+    "rmse_inr": 241826.25404755157,
+    "r2": 0.918743565933505,
+    "median_absolute_error_inr": 52315.87352934573,
+    "rmsle": 0.16162863875634845,
+    "mean_residual_inr": 4744.013792521336,
+    "p90_absolute_error_inr": 184412.64854596657,
+    "within_10_percent_rate": 0.5181460428508964,
+    "within_20_percent_rate": 0.8229121119370354
+  },
+  "dummy_baseline_metrics": {
+    "mae_inr": 400254.91910800175,
+    "rmse_inr": 875012.9885974576,
+    "r2": -0.06384868629869356,
+    "median_absolute_error_inr": 210000.0,
+    "rmsle": 0.6899603514151342,
+    "mean_residual_inr": 214363.35811106252,
+    "p90_absolute_error_inr": 787000.0000000005,
+    "within_10_percent_rate": 0.1394840402273721,
+    "within_20_percent_rate": 0.30520332313073895
+  },
+  "interval_overall_coverage": 0.8141670310450372,
+  "selection_decision": {
+    "rule_fixed_before_test_evaluation": true,
+    "validation_to_test_mae_change_percentage": 10.683129224059313,
+    "checks": {
+      "beats_dummy_on_final_test": true,
+      "cv_relative_mae_std_below_15_percent": true,
+      "validation_to_test_mae_degradation_at_most_25_percent": true,
+      "final_test_r2_is_positive": true,
+      "final_test_interval_coverage_within_10_points_of_target": true
+    },
+    "final_model_selected": true
+  },
+  "repeat_evaluation_allowed": false
+}

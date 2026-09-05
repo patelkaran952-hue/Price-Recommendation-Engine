@@ -1,0 +1,81 @@
+{
+  "model_name": "Used Car Price Recommender",
+  "model_version": "1.0.0",
+  "model_family": "CatBoostRegressor",
+  "final_model_selected": true,
+  "training_completed_at_utc": "2026-09-01T07:04:14.445342+00:00",
+  "production_packaged_at_utc": "2026-09-01T18:57:58.653055+00:00",
+  "random_seed": 42,
+  "training_rows": 10670,
+  "validation_rows": 2287,
+  "final_test_rows": 2287,
+  "feature_columns": [
+    "brand",
+    "model",
+    "vehicle_age",
+    "km_driven",
+    "seller_type",
+    "fuel_type",
+    "transmission_type",
+    "mileage",
+    "engine",
+    "max_power",
+    "seats"
+  ],
+  "target": "selling_price",
+  "target_transform": "log1p",
+  "best_parameters": {
+    "bagging_temperature": 3.0,
+    "border_count": 128,
+    "depth": 6,
+    "l2_leaf_reg": 5.0,
+    "learning_rate": 0.08,
+    "random_strength": 0.5
+  },
+  "best_iteration": 958,
+  "validation_metrics": {
+    "mae_inr": 88383.715099,
+    "rmse_inr": 164818.024931,
+    "r2": 0.958419,
+    "median_absolute_error_inr": 50721.957696,
+    "rmsle": 0.166583,
+    "mean_residual_inr": 6277.339428,
+    "within_20_percent_rate": 0.82641
+  },
+  "final_test_metrics": {
+    "mae_inr": 97825.86159605058,
+    "rmse_inr": 241826.25404755157,
+    "r2": 0.918743565933505,
+    "median_absolute_error_inr": 52315.87352934573,
+    "rmsle": 0.16162863875634845,
+    "mean_residual_inr": 4744.013792521336,
+    "p90_absolute_error_inr": 184412.64854596657,
+    "within_10_percent_rate": 0.5181460428508964,
+    "within_20_percent_rate": 0.8229121119370354
+  },
+  "selection_decision": {
+    "rule_fixed_before_test_evaluation": true,
+    "validation_to_test_mae_change_percentage": 10.683129224059313,
+    "checks": {
+      "beats_dummy_on_final_test": true,
+      "cv_relative_mae_std_below_15_percent": true,
+      "validation_to_test_mae_degradation_at_most_25_percent": true,
+      "final_test_r2_is_positive": true,
+      "final_test_interval_coverage_within_10_points_of_target": true
+    },
+    "final_model_selected": true
+  },
+  "source_hashes": {
+    "cleaned_data": "7a9742b34ebf4017cbd97dec129f0040fc661e582ab749e4f04365b7612b42a0",
+    "split_assignment": "601f9ab1ec8eb30c8d30fe1c1efa6f78d6cc88df85721f716dc9963cfb1739f7",
+    "tuned_candidate": "3b08c06c643129fb0995d7e9ccf4609d8303adf14722e488f54a2fd7ed938b1f"
+  },
+  "library_versions": {
+    "python": "3.12.13",
+    "catboost": "1.2.10",
+    "numpy": "2.3.5",
+    "pandas": "2.2.3",
+    "scikit_learn": "1.8.0",
+    "joblib": "1.5.3"
+  }
+}

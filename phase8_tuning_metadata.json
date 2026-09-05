@@ -1,0 +1,51 @@
+{
+  "phase": "Phase 8",
+  "feature_columns": [
+    "brand",
+    "model",
+    "vehicle_age",
+    "km_driven",
+    "seller_type",
+    "fuel_type",
+    "transmission_type",
+    "mileage",
+    "engine",
+    "max_power",
+    "seats"
+  ],
+  "target_transform": "log1p(selling_price)",
+  "prediction_inverse": "maximum(expm1(prediction), 0)",
+  "catboost_numeric_fill_values": {
+    "vehicle_age": 6.0,
+    "km_driven": 50000.0,
+    "mileage": 19.64,
+    "engine": 1248.0,
+    "max_power": 88.5,
+    "seats": 5.0
+  },
+  "best_parameters": {
+    "CatBoost": {
+      "bagging_temperature": 3.0,
+      "border_count": 128,
+      "depth": 6,
+      "l2_leaf_reg": 5.0,
+      "learning_rate": 0.08,
+      "random_strength": 0.5
+    },
+    "LightGBM": {
+      "colsample_bytree": 1.0,
+      "learning_rate": 0.03,
+      "max_depth": 6,
+      "min_child_samples": 10,
+      "num_leaves": 31,
+      "reg_alpha": 0.1,
+      "reg_lambda": 5.0,
+      "subsample": 1.0
+    }
+  },
+  "best_iterations": {
+    "CatBoost": 958,
+    "LightGBM": 1584
+  },
+  "test_set_evaluated": false
+}

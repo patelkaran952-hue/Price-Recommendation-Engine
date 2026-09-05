@@ -1,0 +1,112 @@
+{
+  "generated_at_utc": "2026-08-31T08:59:33.497208+00:00",
+  "library_versions": {
+    "catboost": "1.2.10",
+    "lightgbm": "4.7.0",
+    "xgboost": "3.4.1",
+    "scikit_learn": "1.8.0",
+    "joblib": "1.5.3"
+  },
+  "random_seed": 42,
+  "feature_columns": [
+    "brand",
+    "model",
+    "vehicle_age",
+    "km_driven",
+    "seller_type",
+    "fuel_type",
+    "transmission_type",
+    "mileage",
+    "engine",
+    "max_power",
+    "seats"
+  ],
+  "target_transform": "log1p",
+  "catboost_numeric_fill_values": {
+    "vehicle_age": 6.0,
+    "km_driven": 50000.0,
+    "mileage": 19.64,
+    "engine": 1248.0,
+    "max_power": 88.5,
+    "seats": 5.0
+  },
+  "catboost_categorical_columns": [
+    "brand",
+    "model",
+    "seller_type",
+    "fuel_type",
+    "transmission_type"
+  ],
+  "one_hot_feature_count": 166,
+  "best_iterations": {
+    "Dummy baseline": null,
+    "CatBoost": 966,
+    "LightGBM": 746,
+    "XGBoost": 836
+  },
+  "artifacts": {
+    "CatBoost": {
+      "path": "models/catboost_untuned.cbm",
+      "sha256": "1048494a0f8ac5306339a06918c6d08942e5f8116286d46af5d1215f5509c047"
+    },
+    "LightGBM": {
+      "path": "models/lightgbm_untuned.joblib",
+      "sha256": "ce832e9ff159018e212c3397f84e3b19bb891c8a26bfbefb879c4c839a5d9cc9"
+    },
+    "XGBoost": {
+      "path": "models/xgboost_untuned.joblib",
+      "sha256": "e82f4caa0ce642710f4946dc365a399541efc4f6a6b4ec3c33889fedd88433f9"
+    }
+  },
+  "validation_comparison": [
+    {
+      "model": "Dummy baseline",
+      "mae_inr": 396881.07,
+      "rmse_inr": 834402.15,
+      "r2": -0.065699,
+      "median_absolute_error_inr": 210000.0,
+      "rmsle": 0.694584,
+      "training_seconds": 0.0,
+      "best_iteration": null,
+      "mae_improvement_vs_dummy_inr": 0.0,
+      "mae_improvement_vs_dummy_percentage": 0.0
+    },
+    {
+      "model": "CatBoost",
+      "mae_inr": 89655.98,
+      "rmse_inr": 167076.6,
+      "r2": 0.957272,
+      "median_absolute_error_inr": 52048.7,
+      "rmsle": 0.167384,
+      "training_seconds": 6.995,
+      "best_iteration": 966,
+      "mae_improvement_vs_dummy_inr": 307225.08,
+      "mae_improvement_vs_dummy_percentage": 77.4099
+    },
+    {
+      "model": "LightGBM",
+      "mae_inr": 96809.49,
+      "rmse_inr": 262283.02,
+      "r2": 0.894701,
+      "median_absolute_error_inr": 51222.88,
+      "rmsle": 0.169135,
+      "training_seconds": 0.77,
+      "best_iteration": 746,
+      "mae_improvement_vs_dummy_inr": 300071.57,
+      "mae_improvement_vs_dummy_percentage": 75.6074
+    },
+    {
+      "model": "XGBoost",
+      "mae_inr": 99046.99,
+      "rmse_inr": 411491.93,
+      "r2": 0.740817,
+      "median_absolute_error_inr": 50533.36,
+      "rmsle": 0.172849,
+      "training_seconds": 2.752,
+      "best_iteration": 836,
+      "mae_improvement_vs_dummy_inr": 297834.08,
+      "mae_improvement_vs_dummy_percentage": 75.0437
+    }
+  ],
+  "test_set_evaluated": false
+}
